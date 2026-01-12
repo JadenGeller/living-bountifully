@@ -1,37 +1,36 @@
 ---
 interface Props {
-  title: string;
-  subtitle?: string;
-  greeting?: string;
+  name: string;
+  bio: string;
   image?: string;
 }
 
-const { title, subtitle, greeting, image } = Astro.props;
+const { name, bio, image } = Astro.props;
 ---
 
-<section class="hero">
-  <div class="hero-content">
-    {image && <img src={image} alt="" class="hero-image tilt-card tilt-intense" />}
-    {greeting && <p class="hero-greeting">{greeting}</p>}
-    <h1 class="hero-title">{title}</h1>
-    {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+<section class="author-intro">
+  <div class="author-content">
+    {image && <img src={image} alt={name} class="author-image tilt-card tilt-scale-lg" />}
+    <p class="author-greeting">Hello,</p>
+    <h1 class="author-name">I'm {name}</h1>
+    <p class="author-bio">{bio}</p>
   </div>
 </section>
 
 <style>
-  .hero {
+  .author-intro {
     text-align: center;
     padding: 3.5rem 1.5rem;
     margin-bottom: 2.5rem;
     border-bottom: 1px solid var(--color-border);
   }
 
-  .hero-content {
+  .author-content {
     max-width: 540px;
     margin: 0 auto;
   }
 
-  .hero-image {
+  .author-image {
     display: block;
     width: 120px;
     height: 120px;
@@ -41,7 +40,7 @@ const { title, subtitle, greeting, image } = Astro.props;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   }
 
-  .hero-greeting {
+  .author-greeting {
     font-family: var(--font-serif);
     font-size: 1.1rem;
     color: var(--color-text-light);
@@ -51,7 +50,7 @@ const { title, subtitle, greeting, image } = Astro.props;
     letter-spacing: 0.02em;
   }
 
-  .hero-title {
+  .author-name {
     font-family: var(--font-serif);
     font-size: 2.75rem;
     margin-bottom: 1.25rem;
@@ -60,7 +59,7 @@ const { title, subtitle, greeting, image } = Astro.props;
     line-height: 1.1;
   }
 
-  .hero-subtitle {
+  .author-bio {
     font-size: 0.95rem;
     color: var(--color-text-light);
     line-height: 1.85;
@@ -68,20 +67,20 @@ const { title, subtitle, greeting, image } = Astro.props;
   }
 
   @media (max-width: 640px) {
-    .hero {
+    .author-intro {
       padding: 2.5rem 1.5rem;
     }
 
-    .hero-image {
+    .author-image {
       width: 100px;
       height: 100px;
     }
 
-    .hero-title {
+    .author-name {
       font-size: 2.25rem;
     }
 
-    .hero-subtitle {
+    .author-bio {
       font-size: 0.9rem;
     }
   }
