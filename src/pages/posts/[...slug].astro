@@ -267,6 +267,8 @@ const imageUrl = post.data.image?.startsWith('/') ? base + post.data.image : pos
   var counter = controls.querySelector('.lightbox-counter');
   var images = Array.from(document.querySelectorAll('.post-hero-image img, .post-content img'));
   var current = 0;
+  var openedAt = 0;
+  var hiddenImg = null;
   var isOpen = false;
 
   function getTargetRect() {
@@ -299,8 +301,18 @@ const imageUrl = post.data.image?.startsWith('/') ? base + post.data.image : pos
   }
 
   function show(i, animate) {
+    // Restore previously hidden image
+    if (hiddenImg) {
+      hiddenImg.style.visibility = '';
+    }
+
     current = (i + images.length) % images.length;
     var srcImg = images[current];
+
+    // Hide new current image
+    srcImg.style.visibility = 'hidden';
+    hiddenImg = srcImg;
+
     lbImg.src = srcImg.src;
     lbImg.alt = srcImg.alt;
     counter.textContent = (current + 1) + ' / ' + images.length;
@@ -313,11 +325,13 @@ const imageUrl = post.data.image?.startsWith('/') ? base + post.data.image : pos
 
   function open(i) {
     current = i;
+    openedAt = i;
     var srcImg = images[i];
     var rect = srcImg.getBoundingClientRect();
 
     // Hide source image, show lightbox image
     srcImg.style.visibility = 'hidden';
+    hiddenImg = srcImg;
     lbImg.style.visibility = '';
 
     lbImg.src = srcImg.src;
@@ -348,6 +362,12 @@ const imageUrl = post.data.image?.startsWith('/') ? base + post.data.image : pos
 
   function close() {
     var srcImg = images[current];
+
+    // Scroll to current image if we navigated to a different one
+    if (current !== openedAt) {
+      srcImg.scrollIntoView({ behavior: 'instant', block: 'center' });
+    }
+
     var rect = srcImg.getBoundingClientRect();
 
     backdrop.classList.remove('active');
@@ -358,7 +378,10 @@ const imageUrl = post.data.image?.startsWith('/') ? base + post.data.image : pos
     // After animation, reset everything
     setTimeout(function() {
       lbImg.style.visibility = 'hidden';
-      srcImg.style.visibility = '';
+      if (hiddenImg) {
+        hiddenImg.style.visibility = '';
+        hiddenImg = null;
+      }
     }, 350);
 
     isOpen = false;
