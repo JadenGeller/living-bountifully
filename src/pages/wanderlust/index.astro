@@ -26,16 +26,24 @@ function getExcerpt(body: string): string {
     </p>
   </section>
 
+  <nav class="filter-pills">
+    <button class="pill active" data-country="all">All</button>
+    <button class="pill" data-country="Spain">Spain</button>
+    <button class="pill" data-country="Italy">Italy</button>
+  </nav>
+
   <section class="posts-grid">
     {sortedPosts.map((post) => (
-      <PostCard
-        title={post.data.title}
-        date={post.data.date}
-        category={post.data.category}
-        slug={post.id}
-        image={post.data.image}
-        excerpt={getExcerpt(post.body)}
-      />
+      <div class="post-wrapper" data-country={post.data.category}>
+        <PostCard
+          title={post.data.title}
+          date={post.data.date}
+          category={post.data.category}
+          slug={post.id}
+          image={post.data.image}
+          excerpt={getExcerpt(post.body)}
+        />
+      </div>
     ))}
   </section>
 </BaseLayout>
@@ -82,6 +90,44 @@ function getExcerpt(body: string): string {
     gap: 2rem;
   }
 
+  .filter-pills {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .pill {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 1.25rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .pill:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .pill.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+  }
+
+  .post-wrapper {
+    display: block;
+  }
+
+  .post-wrapper.hidden {
+    display: none;
+  }
+
   @media (max-width: 640px) {
     .page-intro {
       padding: 2.5rem 1rem;
@@ -96,3 +142,25 @@ function getExcerpt(body: string): string {
     }
   }
 </style>
+
+<script>
+  const pills = document.querySelectorAll('.pill');
+  const posts = document.querySelectorAll('.post-wrapper');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const country = pill.getAttribute('data-country');
+
+      posts.forEach(post => {
+        if (country === 'all' || post.getAttribute('data-country') === country) {
+          post.classList.remove('hidden');
+        } else {
+          post.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
