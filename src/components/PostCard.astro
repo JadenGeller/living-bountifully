@@ -5,10 +5,10 @@ interface Props {
   category: string;
   slug: string;
   image?: string;
-  description?: string;
+  excerpt?: string;
 }
 
-const { title, date, category, slug, image, description } = Astro.props;
+const { title, date, category, slug, image, excerpt } = Astro.props;
 const base = import.meta.env.BASE_URL;
 
 const formattedDate = date.toLocaleDateString('en-US', {
@@ -20,7 +20,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
 const imageUrl = image?.startsWith('/') ? base + image : image;
 ---
 
-<article class="post-card">
+<article class="post-card tilt-card">
   <a href={`${base}/posts/${slug}`} class="post-link">
     {imageUrl && (
       <div class="post-image">
@@ -30,7 +30,7 @@ const imageUrl = image?.startsWith('/') ? base + image : image;
     <div class="post-content">
       <span class="post-category">{category}</span>
       <h2 class="post-title">{title}</h2>
-      {description && <p class="post-excerpt">{description}</p>}
+      {excerpt && <p class="post-excerpt">{excerpt}</p>}
       <time class="post-date" datetime={date.toISOString()}>{formattedDate}</time>
     </div>
   </a>
@@ -38,14 +38,27 @@ const imageUrl = image?.startsWith('/') ? base + image : image;
 
 <style>
   .post-card {
-    background: white;
-    border: 1px solid var(--color-border);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    --tx: 0px;
+    --ty: 0px;
+    --rx: 0deg;
+    --ry: 0deg;
+    --scale: 1;
+    background: transparent;
+    border-radius: 12px;
+    transform: perspective(600px) translateX(var(--tx)) translateY(var(--ty)) rotateX(var(--rx)) rotateY(var(--ry)) scale(var(--scale));
+    transition:
+      transform 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+      box-shadow 0.3s ease;
+    overflow: hidden;
   }
 
   .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .post-card {
+      transform: none !important;
+    }
   }
 
   .post-link {
@@ -57,17 +70,16 @@ const imageUrl = image?.startsWith('/') ? base + image : image;
   .post-image {
     aspect-ratio: 16 / 10;
     overflow: hidden;
+    border-radius: 12px;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.06),
+      0 4px 16px rgba(0, 0, 0, 0.04);
   }
 
   .post-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-
-  .post-card:hover .post-image img {
-    transform: scale(1.05);
   }
 
   .post-content {
@@ -93,7 +105,7 @@ const imageUrl = image?.startsWith('/') ? base + image : image;
     color: var(--color-text-light);
     margin-bottom: 1rem;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

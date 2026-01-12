@@ -5,6 +5,13 @@ import { getCollection } from 'astro:content';
 
 const posts = await getCollection('posts');
 const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function getExcerpt(body: string): string {
+  const lines = body.split('\n').filter(line =>
+    line.trim() && !line.startsWith('#') && !line.startsWith('!') && !line.startsWith('-') && !line.startsWith('*')
+  );
+  return lines.slice(0, 5).map(l => l.trim()).join(' ');
+}
 ---
 
 <BaseLayout title="Wanderlust | Living Bountifully">
@@ -26,7 +33,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
         category={post.data.category}
         slug={post.id}
         image={post.data.image}
-        description={post.data.description}
+        excerpt={getExcerpt(post.body)}
       />
     ))}
   </section>
@@ -77,3 +84,8 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
     }
   }
 </style>
+
+<script>
+  import { initTiltEffect } from '../../scripts/tilt-effect';
+  initTiltEffect('.tilt-card');
+</script>
