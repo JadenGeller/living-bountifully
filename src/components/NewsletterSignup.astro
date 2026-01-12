@@ -1,9 +1,11 @@
 ---
+import { BUTTONDOWN_USERNAME } from '../config';
+
 interface Props {
   buttondownUsername?: string;
 }
 
-const { buttondownUsername = 'YOUR_USERNAME' } = Astro.props;
+const { buttondownUsername = BUTTONDOWN_USERNAME } = Astro.props;
 ---
 
 <section class="newsletter">
@@ -34,27 +36,27 @@ const { buttondownUsername = 'YOUR_USERNAME' } = Astro.props;
 <style>
   .newsletter {
     text-align: center;
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem 1.5rem;
     background: rgba(139, 115, 85, 0.06);
     border-radius: 8px;
-    max-width: 400px;
-    margin: 0 auto 2rem;
+    max-width: 360px;
+    margin: 2rem auto;
   }
 
   .newsletter-heading {
     font-family: var(--font-serif);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 400;
     font-style: italic;
     color: var(--color-text);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .newsletter-text {
     color: var(--color-text-light);
     font-size: 0.8rem;
-    line-height: 1.5;
-    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
   }
 
   .newsletter-form {
@@ -98,5 +100,11 @@ const { buttondownUsername = 'YOUR_USERNAME' } = Astro.props;
   .newsletter-button:hover {
     background: var(--color-accent);
     border-color: var(--color-accent);
+  }
+
+  @media (max-width: 700px) {
+    .newsletter {
+      margin: 0 1rem 1.5rem;
+    }
   }
 </style>
