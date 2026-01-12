@@ -3,7 +3,7 @@ title: "Experience the Magic of Mallorca"
 description: "A complete guide to Mallorca including the best things to do, where to eat, and where to stay on this stunning Spanish island."
 date: 2025-07-10
 category: "Spain"
-image: "/living-bountifully/images/mallorca-main.jpg"
+image: "/images/mallorca-main.jpg"
 imageAlt: "Beautiful coastline of Mallorca"
 ---
 

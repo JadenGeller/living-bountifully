@@ -3,7 +3,7 @@ title: "The Perfect Day Trip to Jerez de la Frontera"
 description: "Explore the sherry capital of the world with churros, bodega tours, and authentic flamenco performances."
 date: 2025-07-05
 category: "Spain"
-image: "/living-bountifully/images/jerez-main.jpg"
+image: "/images/jerez-main.jpg"
 imageAlt: "Streets of Jerez de la Frontera"
 ---
 
@@ -15,7 +15,7 @@ Located 30 minutes from Cadiz and an hour from Sevilla, Jerez offers convenient 
 
 I recommend beginning with coffee and fresh churros dipped in thick chocolate sauce. **Bar La Plaza** serves as my preferred choice among multiple café options.
 
-![Churros and chocolate](/living-bountifully/images/jerez-churros.jpg)
+![Churros and chocolate](/images/jerez-churros.jpg)
 
 ## Tour a bodega
 
@@ -25,7 +25,7 @@ Wine tasting represents the primary activity. **Bodegas Tradición**, located in
 
 The Cathedral merits exploration despite common assumptions about European cathedrals. Visitors can climb the bell-tower for city views. Details available at catedraldejerez.es.
 
-![Jerez Cathedral](/living-bountifully/images/jerez-cathedral.jpg)
+![Jerez Cathedral](/images/jerez-cathedral.jpg)
 
 ## Explore the city center
 

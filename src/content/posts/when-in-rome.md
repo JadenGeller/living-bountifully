@@ -3,7 +3,7 @@ title: "When in Rome…"
 description: "A weekend guide to Rome's must-see attractions, from the Vatican to the Trevi Fountain, plus the best Italian food to try."
 date: 2025-07-11
 category: "Italy"
-image: "/living-bountifully/images/rome-main.jpg"
+image: "/images/rome-main.jpg"
 imageAlt: "Roman architecture"
 ---
 
@@ -17,17 +17,17 @@ The **Pantheon,** another well known site, is nestled in narrows streets. It cer
 
 I have to admit, I'd never heard of or even seen pictures of the **Altare della Patria** monument until it smacked me in the face while walking down the street. All I could think was HOW have I not heard of this before?! It's a magnificent monument and definitely worth the stop to get that "influencer" shot.
 
-![Altare della Patria](/living-bountifully/images/rome-altare.jpg)
+![Altare della Patria](/images/rome-altare.jpg)
 
 There is no walk to the Colosseum more enjoyable than through the **Roman Forum**. I was literally surrounded by Roman ruins on either side of me; I didn't know which way to look!
 
-![Roman Forum](/living-bountifully/images/rome-forum.jpg)
+![Roman Forum](/images/rome-forum.jpg)
 
 Speaking of the **Colosseum**, this is probably what you think of when you think of Rome. I know it was for me, at least. Well, that and lots of wine and carbs. I've seen a few Roman theaters in my travels, but nothing as grand and well preserved as the Colosseum. It's… *Colossal.* Bad dad joke, sorry!
 
 I can't believe I made it this far without mentioning the **Trevi Fountain**. It's quite literally the fountain that dreams are made of. And it really is magical if you can get past the hoards of people trying to get their perfect "I'm the only one here" photo. Nothing like an over-population of tourists to spoil a good historical monument. Oh wait, I guess I'm one too.
 
-![Trevi Fountain](/living-bountifully/images/rome-trevi.jpg)
+![Trevi Fountain](/images/rome-trevi.jpg)
 
 Not as well known, **Piazza Navona** is a beautiful plaza with three interesting and grand fountains showcased there. It's a great place to stop for some gelato, a drink or a bite to eat.
 
@@ -47,7 +47,7 @@ And it wouldn't be a trip to Rome without the food, of course. Eating Italian fo
 - Aperol Spritz
 - Lemoncello
 
-![Best carbonara](/living-bountifully/images/rome-carbonara.jpg)
+![Best carbonara](/images/rome-carbonara.jpg)
 
 If that's not enough for one trip, I'm always a big fan of tours and activities as well. I recommend taking a pasta making class if you can. It was so much fun and surprisingly easier than I thought it would be. I also did a food and drinking tour. While they were fun, I think I might prefer Spanish tapas tours instead, though.
 

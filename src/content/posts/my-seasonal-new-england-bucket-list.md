@@ -3,7 +3,7 @@ title: "My Seasonal New England Bucket List"
 description: "Exploring all four seasons in New England with activities from maple sugaring to skiing, beaches to foliage tours."
 date: 2025-08-29
 category: "Uncategorized"
-image: "/living-bountifully/images/new-england-bucket-list.jpg"
+image: "/images/new-england-bucket-list.jpg"
 imageAlt: "New England seasonal scenery"
 ---
 
@@ -32,7 +32,7 @@ Recommended sugar houses:
 
 ## Summer
 
-![Summer in New England](/living-bountifully/images/new-england-summer.jpg)
+![Summer in New England](/images/new-england-summer.jpg)
 
 ### Explore Boston
 
@@ -64,7 +64,7 @@ I have been pleasantly surprised by how much there is to do in the city during t
 
 ## Fall
 
-![Fall foliage in New England](/living-bountifully/images/new-england-fall.jpg)
+![Fall foliage in New England](/images/new-england-fall.jpg)
 
 ### Foliage Tour
 
@@ -103,7 +103,7 @@ Salem is the ultimate Halloween destination with Hocus Pocus filming locations. 
 
 ## Winter
 
-![Winter in New England](/living-bountifully/images/new-england-winter.jpg)
+![Winter in New England](/images/new-england-winter.jpg)
 
 ### Skiing
 

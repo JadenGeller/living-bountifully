@@ -3,7 +3,7 @@ title: "My Favorite Activity in Spain – Tapas Tours!"
 description: "Why tapas tours are the best way to experience local Spanish cuisine and culture while traveling."
 date: 2025-07-02
 category: "Spain"
-image: "/living-bountifully/images/tapas-tour.jpg"
+image: "/images/tapas-tour.jpg"
 imageAlt: "Spanish tapas"
 ---
 

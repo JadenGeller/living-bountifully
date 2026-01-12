@@ -3,7 +3,7 @@ title: "How to Spend 24 hours in Barcelona"
 description: "Make the most of a short visit to Barcelona with these top three recommendations for experiencing the city."
 date: 2025-07-09
 category: "Spain"
-image: "/living-bountifully/images/barcelona-sagrada-familia.jpg"
+image: "/images/barcelona-sagrada-familia.jpg"
 imageAlt: "Sagrada Familia in Barcelona"
 ---
 
