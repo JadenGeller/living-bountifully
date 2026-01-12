@@ -142,4 +142,252 @@ const imageUrl = post.data.image?.startsWith('/') ? base + post.data.image : pos
       font-size: 1.75rem;
     }
   }
+
+  .post-hero-image img,
+  .post-content :global(img) {
+    cursor: zoom-in;
+  }
 </style>
+
+<style is:global>
+  header.site-header {
+    transition: transform 0.3s ease;
+  }
+
+  body.lightbox-open header.site-header {
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+
+  .lightbox-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-bg);
+    opacity: 0;
+    z-index: 97;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .lightbox-backdrop.active {
+    opacity: 0.95;
+    pointer-events: auto;
+  }
+
+  .lightbox-image {
+    position: fixed;
+    object-fit: contain;
+    z-index: 98;
+    cursor: zoom-out;
+    transition: left 0.35s cubic-bezier(0.2, 0, 0.2, 1),
+                top 0.35s cubic-bezier(0.2, 0, 0.2, 1),
+                width 0.35s cubic-bezier(0.2, 0, 0.2, 1),
+                height 0.35s cubic-bezier(0.2, 0, 0.2, 1);
+  }
+
+  .lightbox-controls {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .lightbox-controls.active {
+    opacity: 1;
+  }
+
+  .lightbox-controls button {
+    pointer-events: auto;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.5;
+    line-height: 1;
+    transition: opacity 0.2s;
+  }
+
+  .lightbox-close:hover {
+    opacity: 1;
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 2.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+    padding: 1rem;
+    transition: opacity 0.2s;
+  }
+
+  .lightbox-nav:hover {
+    opacity: 1;
+  }
+
+  .lightbox-prev { left: 1rem; }
+  .lightbox-next { right: 1rem; }
+
+  .lightbox-counter {
+    display: none;
+  }
+</style>
+
+<div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+<img class="lightbox-image" id="lightbox-image" src="" alt="" />
+<div class="lightbox-controls" id="lightbox-controls">
+  <button class="lightbox-close">&times;</button>
+  <button class="lightbox-nav lightbox-prev">&#8249;</button>
+  <button class="lightbox-nav lightbox-next">&#8250;</button>
+  <div class="lightbox-counter"></div>
+</div>
+
+<script is:inline>
+(function() {
+  var backdrop = document.getElementById('lightbox-backdrop');
+  var lbImg = document.getElementById('lightbox-image');
+  var controls = document.getElementById('lightbox-controls');
+  if (!backdrop || !lbImg || !controls) return;
+  var counter = controls.querySelector('.lightbox-counter');
+  var images = Array.from(document.querySelectorAll('.post-hero-image img, .post-content img'));
+  var current = 0;
+  var isOpen = false;
+
+  function getTargetRect() {
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
+    var padding = 40;
+    var maxW = vw - padding * 2;
+    var maxH = vh - padding * 2;
+
+    var img = images[current];
+    var naturalW = img.naturalWidth || img.width;
+    var naturalH = img.naturalHeight || img.height;
+    var ratio = Math.min(maxW / naturalW, maxH / naturalH, 1);
+    var w = naturalW * ratio;
+    var h = naturalH * ratio;
+
+    return {
+      left: (vw - w) / 2,
+      top: (vh - h) / 2,
+      width: w,
+      height: h
+    };
+  }
+
+  function setImageRect(rect) {
+    lbImg.style.left = rect.left + 'px';
+    lbImg.style.top = rect.top + 'px';
+    lbImg.style.width = rect.width + 'px';
+    lbImg.style.height = rect.height + 'px';
+  }
+
+  function show(i, animate) {
+    current = (i + images.length) % images.length;
+    var srcImg = images[current];
+    lbImg.src = srcImg.src;
+    lbImg.alt = srcImg.alt;
+    counter.textContent = (current + 1) + ' / ' + images.length;
+
+    if (animate !== false) {
+      var target = getTargetRect();
+      setImageRect(target);
+    }
+  }
+
+  function open(i) {
+    current = i;
+    var srcImg = images[i];
+    var rect = srcImg.getBoundingClientRect();
+
+    // Hide source image, show lightbox image
+    srcImg.style.visibility = 'hidden';
+    lbImg.style.visibility = '';
+
+    lbImg.src = srcImg.src;
+    lbImg.alt = srcImg.alt;
+    counter.textContent = (i + 1) + ' / ' + images.length;
+
+    // Start at source position
+    lbImg.style.transition = 'none';
+    setImageRect(rect);
+
+    // Force reflow
+    lbImg.offsetHeight;
+
+    // Animate to target
+    lbImg.style.transition = '';
+    backdrop.classList.add('active');
+    controls.classList.add('active');
+    isOpen = true;
+
+    requestAnimationFrame(function() {
+      var target = getTargetRect();
+      setImageRect(target);
+    });
+
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('lightbox-open');
+  }
+
+  function close() {
+    var srcImg = images[current];
+    var rect = srcImg.getBoundingClientRect();
+
+    backdrop.classList.remove('active');
+    controls.classList.remove('active');
+    setImageRect(rect);
+    document.body.classList.remove('lightbox-open');
+
+    // After animation, reset everything
+    setTimeout(function() {
+      lbImg.style.visibility = 'hidden';
+      srcImg.style.visibility = '';
+    }, 350);
+
+    isOpen = false;
+    document.body.style.overflow = '';
+  }
+
+  images.forEach(function(image, i) {
+    image.addEventListener('click', function() { open(i); });
+  });
+
+  controls.querySelector('.lightbox-close').addEventListener('click', close);
+  controls.querySelector('.lightbox-prev').addEventListener('click', function() { show(current - 1); });
+  controls.querySelector('.lightbox-next').addEventListener('click', function() { show(current + 1); });
+
+  backdrop.addEventListener('click', close);
+  lbImg.addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e) {
+    if (!isOpen) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+
+  window.addEventListener('resize', function() {
+    if (isOpen) {
+      var target = getTargetRect();
+      setImageRect(target);
+    }
+  });
+})();
+</script>
