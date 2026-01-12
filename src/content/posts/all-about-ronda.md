@@ -3,7 +3,7 @@ title: "All About Ronda"
 description: "Don't skip this iconic town in Andalusia! A guide to experiencing Ronda's famous bridge, olive oil tastings, and more."
 date: 2025-07-07
 category: "Spain"
-image: "/images/ronda-bridge.jpg"
+image: "/living-bountifully/images/ronda-bridge.jpg"
 imageAlt: "Puente Nuevo bridge in Ronda"
 ---
 
@@ -29,7 +29,7 @@ Shopping occurs along **Carrera Espinel** street. The bullring offers tours, whi
 
 **Tragatá**, a Michelin star tapas establishment, provides evening dining. The venue maintains limited seating, requiring advance online reservations.
 
-![View from Ronda](/images/ronda-view.jpg)
+![View from Ronda](/living-bountifully/images/ronda-view.jpg)
 
 ## Second Day
 

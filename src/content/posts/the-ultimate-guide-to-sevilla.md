@@ -3,7 +3,7 @@ title: "The Ultimate Guide to Sevilla"
 description: "Everything you need to know about visiting Sevilla, from must-see attractions to the best places to eat and stay."
 date: 2025-07-08
 category: "Spain"
-image: "/images/sevilla-plaza-espana.jpg"
+image: "/living-bountifully/images/sevilla-plaza-espana.jpg"
 imageAlt: "Plaza de España in Sevilla"
 ---
 

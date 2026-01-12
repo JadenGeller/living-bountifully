@@ -3,7 +3,7 @@ title: "The Top 3 Cultural Celebrations to See in Spain"
 description: "Immerse yourself in Spanish culture through these three unique celebrations: Carnival, Holy Week, and Feria."
 date: 2025-07-04
 category: "Spain"
-image: "/images/spain-feria.jpg"
+image: "/living-bountifully/images/spain-feria.jpg"
 imageAlt: "Feria celebration in Spain"
 ---
 
@@ -13,7 +13,7 @@ When I travel, I really enjoy immersing myself in the cultural experiences of ot
 
 This festival is usually held in February or March, in the weeks leading up to lent each year. Everyone dresses up in extravagant costumes and you can watch performances both on stage and in the streets. Cadiz has one of the most well-known carnivals in Spain, with a focus on costumes and performances centered around humor and irony. Almost all cities in Spain will have their own version of carnival though, so you can experience the excitement no matter where you are in the country.
 
-![Carnival celebration](/images/spain-carnival.jpg)
+![Carnival celebration](/living-bountifully/images/spain-carnival.jpg)
 
 ## Holy Week
 

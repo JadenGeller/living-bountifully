@@ -3,7 +3,7 @@ title: "The Best of Cadiz"
 description: "A complete guide to exploring Cadiz, one of the oldest cities in Western Europe with over 3,000 years of history."
 date: 2025-07-06
 category: "Spain"
-image: "/images/cadiz-main.jpg"
+image: "/living-bountifully/images/cadiz-main.jpg"
 imageAlt: "View of Cadiz"
 ---
 
@@ -24,7 +24,7 @@ Old Town Cadiz offers the most historic and walkable experience. You can complet
 9. Take a guided bike tour through Old Town
 10. Experience local cuisine on a guided tapas tour
 
-![Cadiz architecture](/images/cadiz-architecture.jpg)
+![Cadiz architecture](/living-bountifully/images/cadiz-architecture.jpg)
 
 ## Where to Eat
 
