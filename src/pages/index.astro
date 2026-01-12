@@ -17,7 +17,11 @@ function getExcerpt(body: string): string {
 }
 ---
 
-<BaseLayout title="Living Bountifully">
+<BaseLayout title="Living Bountifully" image={(() => {
+  const img = sortedPosts.find(p => p.data.image)?.data.image;
+  if (img) return img.startsWith('/') ? base + img : img;
+  return `${base}/images/andrea-profile.jpg`;
+})()}>
   <AuthorIntro
     name="Andrea"
     image={`${base}/images/andrea-profile.jpg`}
