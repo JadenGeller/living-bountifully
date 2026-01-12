@@ -1,10 +1,8 @@
 ---
 title: "Gibraltar in a Day: My Top Things to See and Do"
-description: "A complete guide to exploring Gibraltar in one day, from the famous Rock to fish and chips at a local pub."
 date: 2025-07-12
 category: "Spain"
 image: "/images/gibraltar-skywalk.jpg"
-imageAlt: "View from the Skywalk in Gibraltar"
 ---
 
 Our very last trip before we moved back to the US from Spain was a day trip to Gibraltar. This had been on our list for a long time, but we never seemed to have the time with all of our other travel plans. Gibraltar is located in a very unique location at one of the southern-most points in Spain, but it is not considered part of Spain. Due to its strategic location at the mouth of the Mediterranean Sea, it is a sought after territory that was ultimately taken from the Spanish by the British and is considered a British Overseas Territory. Because of this, it has a very unique blend of Spanish and British culture. I can't tell you how weird it was going to an english-speaking country after living in Europe for over a year and a half and being surrounded by foreign languages. What made it even more surreal was that it was only about an hour and a half drive from where we lived in Spain.

@@ -1,10 +1,8 @@
 ---
 title: "The Best of Cadiz"
-description: "A complete guide to exploring Cadiz, one of the oldest cities in Western Europe with over 3,000 years of history."
 date: 2025-07-06
 category: "Spain"
 image: "/images/cadiz-main.jpg"
-imageAlt: "View of Cadiz"
 ---
 
 Cadiz was one of the first cities I explored after moving to Spain in the Andalusia region. The city reminds me of San Francisco due to its geographical layout and the prominent bridge spanning its entrance—the tallest in Spain.

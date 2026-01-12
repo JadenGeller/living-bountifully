@@ -1,10 +1,8 @@
 ---
 title: "The Top 3 Cultural Celebrations to See in Spain"
-description: "Immerse yourself in Spanish culture through these three unique celebrations: Carnival, Holy Week, and Feria."
 date: 2025-07-04
 category: "Spain"
 image: "/images/spain-feria.jpg"
-imageAlt: "Feria celebration in Spain"
 ---
 
 When I travel, I really enjoy immersing myself in the cultural experiences of other countries. It's so exciting and interesting to learn about customs that are different to what I'm used to back in the U.S. One of the cultural differences I've learned about are the types of celebrations they have in Spain. No, there's no 4th of July or Thanksgiving, but they do have some pretty unique and fun celebrations of their own here.

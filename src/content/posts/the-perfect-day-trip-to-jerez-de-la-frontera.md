@@ -1,10 +1,8 @@
 ---
 title: "The Perfect Day Trip to Jerez de la Frontera"
-description: "Explore the sherry capital of the world with churros, bodega tours, and authentic flamenco performances."
 date: 2025-07-05
 category: "Spain"
 image: "/images/jerez-main.jpg"
-imageAlt: "Streets of Jerez de la Frontera"
 ---
 
 Jerez de la Frontera, which literally translates to the sherry border, is known as the sherry capital of the world. The destination attracts visitors seeking authentic sherry wine experiences and equestrian performances.

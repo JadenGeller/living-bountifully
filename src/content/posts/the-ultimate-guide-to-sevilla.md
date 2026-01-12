@@ -1,10 +1,8 @@
 ---
 title: "The Ultimate Guide to Sevilla"
-description: "Everything you need to know about visiting Sevilla, from must-see attractions to the best places to eat and stay."
 date: 2025-07-08
 category: "Spain"
 image: "/images/sevilla-plaza-espana.jpg"
-imageAlt: "Plaza de España in Sevilla"
 ---
 
 If I had to pick one city that feels the most like vibrant and lively Spanish culture, it would be Sevilla. This city holds a special place in my heart due to repeated visits that consistently exceed expectations.

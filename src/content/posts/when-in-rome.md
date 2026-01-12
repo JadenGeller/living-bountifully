@@ -1,10 +1,8 @@
 ---
 title: "When in Rome…"
-description: "A weekend guide to Rome's must-see attractions, from the Vatican to the Trevi Fountain, plus the best Italian food to try."
 date: 2025-07-11
 category: "Italy"
 image: "/images/rome-main.jpg"
-imageAlt: "Roman architecture"
 ---
 
 Known as the city of love, food and Roman ruins (to me, at least), Rome is certainly a mighty city to behold. I don't think I was prepared for just how big this city really is, and how much there is to see and do while you're here. I was graced by this city's presence for only a weekend, so I imagine I'll have some editing to do if, and when, I return in the future. In the meantime, here's a highlight reel of top things to see when in Rome…

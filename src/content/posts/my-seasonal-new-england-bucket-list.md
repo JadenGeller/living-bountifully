@@ -1,10 +1,8 @@
 ---
 title: "My Seasonal New England Bucket List"
-description: "Exploring all four seasons in New England with activities from maple sugaring to skiing, beaches to foliage tours."
 date: 2025-08-29
 category: "Uncategorized"
 image: "/images/new-england-bucket-list.jpg"
-imageAlt: "New England seasonal scenery"
 ---
 
 One of the most exciting parts about living in New England is having four defined seasons. Having moved from Northern California, I want to prioritize experiencing each season fully. August has passed quickly and I created a seasonal bucket list to ensure comprehensive seasonal engagement.

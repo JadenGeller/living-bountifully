@@ -1,10 +1,8 @@
 ---
 title: "My Favorite Cities to Visit in Andalusia"
-description: "A guide to the best cities in Andalusia, from the vibrant capital of Sevilla to the luxurious coastal town of Marbella."
 date: 2025-07-03
 category: "Spain"
 image: "/images/andalusia-main.jpg"
-imageAlt: "Beautiful scenery in Andalusia"
 ---
 
 Andalusia is one of the largest regions in Spain, located in the southern-most part of the country. The region's Moorish heritage influences its architecture, and its diverse geography means visitors can experience everything from rolling hillsides with farmland in Jerez, dry dessert terrain near Almeria and snowy mountainous areas like Granada.

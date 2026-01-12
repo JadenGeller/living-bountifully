@@ -1,10 +1,8 @@
 ---
 title: "Experience the Magic of Mallorca"
-description: "A complete guide to Mallorca including the best things to do, where to eat, and where to stay on this stunning Spanish island."
 date: 2025-07-10
 category: "Spain"
 image: "/images/mallorca-main.jpg"
-imageAlt: "Beautiful coastline of Mallorca"
 ---
 
 Mallorca is one of those islands that makes you feel like you're in a dream. I've had so many 'pinch me' moments here, from the breathtaking landscape and beaches to the beautiful architecture in Palma.

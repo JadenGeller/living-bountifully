@@ -1,10 +1,8 @@
 ---
 title: "All About Ronda"
-description: "Don't skip this iconic town in Andalusia! A guide to experiencing Ronda's famous bridge, olive oil tastings, and more."
 date: 2025-07-07
 category: "Spain"
 image: "/images/ronda-bridge.jpg"
-imageAlt: "Puente Nuevo bridge in Ronda"
 ---
 
 Ronda stands as one of my preferred weekend getaway destinations. Most people recognize this small Spanish town through its famous bridge, which frequently appears as a screensaver image. The Andalusian city deserves greater recognition as a travel destination.
