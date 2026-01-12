@@ -34,7 +34,7 @@ function getExcerpt(body: string): string {
       return (
         <article class="post-item">
           {imageUrl && (
-            <a href={`${base}/posts/${post.id}`} class="post-image">
+            <a href={`${base}/posts/${post.id}`} class="post-image tilt-card">
               <img src={imageUrl} alt={post.data.title} loading="lazy" />
             </a>
           )}
@@ -52,6 +52,7 @@ function getExcerpt(body: string): string {
 </BaseLayout>
 
 <style>
+
   .posts-list {
     max-width: 860px;
     margin: 0 auto;
@@ -71,33 +72,18 @@ function getExcerpt(body: string): string {
   }
 
   .post-image {
-    --tx: 0px;
-    --ty: 0px;
-    --rx: 0deg;
-    --ry: 0deg;
-    --scale: 1;
     display: block;
     overflow: hidden;
     border-radius: 12px;
     box-shadow:
       0 4px 12px rgba(0, 0, 0, 0.08),
       0 8px 24px rgba(0, 0, 0, 0.1);
-    transform: perspective(600px) translateX(var(--tx)) translateY(var(--ty)) rotateX(var(--rx)) rotateY(var(--ry)) scale(var(--scale));
-    transition:
-      transform 0.5s cubic-bezier(0.33, 1, 0.68, 1),
-      box-shadow 0.3s ease;
   }
 
   .post-image:hover {
     box-shadow:
       0 12px 20px rgba(0, 0, 0, 0.1),
       0 20px 40px rgba(0, 0, 0, 0.12);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .post-image {
-      transform: none !important;
-    }
   }
 
   .post-image img {
@@ -175,8 +161,3 @@ function getExcerpt(body: string): string {
     }
   }
 </style>
-
-<script>
-  import { initTiltEffect } from '../scripts/tilt-effect';
-  initTiltEffect('.post-image');
-</script>

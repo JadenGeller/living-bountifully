@@ -37,29 +37,6 @@ const imageUrl = image?.startsWith('/') ? base + image : image;
 </article>
 
 <style>
-  .post-card {
-    --tx: 0px;
-    --ty: 0px;
-    --rx: 0deg;
-    --ry: 0deg;
-    --scale: 1;
-    background: transparent;
-    border-radius: 12px;
-    transform: perspective(600px) translateX(var(--tx)) translateY(var(--ty)) rotateX(var(--rx)) rotateY(var(--ry)) scale(var(--scale));
-    transition:
-      transform 0.5s cubic-bezier(0.33, 1, 0.68, 1),
-      box-shadow 0.3s ease;
-  }
-
-  .post-card:hover {
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .post-card {
-      transform: none !important;
-    }
-  }
-
   .post-link {
     display: block;
     text-decoration: none;
