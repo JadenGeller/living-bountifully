@@ -1,10 +1,32 @@
 export function initTiltEffect(selector: string) {
+  let isScrolling = false;
+  let scrollTimeout: number | null = null;
+  const cards: HTMLElement[] = [];
+
+  function resetCard(card: HTMLElement) {
+    card.style.removeProperty('--tx');
+    card.style.removeProperty('--ty');
+    card.style.removeProperty('--rx');
+    card.style.removeProperty('--ry');
+    card.style.removeProperty('--scale');
+  }
+
+  window.addEventListener('scroll', () => {
+    isScrolling = true;
+    cards.forEach(resetCard);
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      isScrolling = false;
+    }, 150);
+  }, { passive: true });
+
   document.querySelectorAll(selector).forEach((el) => {
     const card = el as HTMLElement;
+    cards.push(card);
     let rafId: number | null = null;
 
     card.addEventListener('mousemove', (e) => {
-      if (rafId) return;
+      if (rafId || isScrolling) return;
 
       rafId = requestAnimationFrame(() => {
         const rect = card.getBoundingClientRect();
@@ -23,11 +45,7 @@ export function initTiltEffect(selector: string) {
     card.addEventListener('mouseleave', () => {
       if (rafId) cancelAnimationFrame(rafId);
       rafId = null;
-      card.style.removeProperty('--tx');
-      card.style.removeProperty('--ty');
-      card.style.removeProperty('--rx');
-      card.style.removeProperty('--ry');
-      card.style.removeProperty('--scale');
+      resetCard(card);
     });
   });
 }
