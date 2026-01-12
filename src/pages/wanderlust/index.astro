@@ -16,9 +16,10 @@ function getExcerpt(body: string): string {
 
 <BaseLayout title="Wanderlust | Living Bountifully">
   <section class="page-intro">
-    <h1>From the Blog</h1>
-    <p>
-      Welcome to Wanderlust—a collection of my travel stories, guides, and adventures near and far.
+    <p class="page-greeting">Welcome to</p>
+    <h1>Wanderlust</h1>
+    <p class="page-description">
+      A collection of my travel stories, guides, and adventures near and far.
       From weekend getaways to international escapes, this is where I share all the places that have
       sparked curiosity, brought joy, and left me wanting more. Whether you're planning your next trip
       or just here to wander from your screen, I'm so glad you're along for the ride.
@@ -50,17 +51,28 @@ function getExcerpt(body: string): string {
     margin-right: auto;
   }
 
-  .page-intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
+  .page-greeting {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.25rem;
+    font-weight: 400;
     letter-spacing: 0.02em;
   }
 
-  .page-intro p {
-    font-size: 1.1rem;
+  .page-intro h1 {
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  .page-description {
+    font-size: 0.95rem;
     color: var(--color-text-light);
-    line-height: 1.8;
+    line-height: 1.85;
     margin: 0;
   }
 
@@ -76,7 +88,7 @@ function getExcerpt(body: string): string {
     }
 
     .page-intro h1 {
-      font-size: 2rem;
+      font-size: 2.25rem;
     }
 
     .posts-grid {
