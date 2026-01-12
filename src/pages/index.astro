@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AuthorIntro from '../components/AuthorIntro.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 import { getCollection } from 'astro:content';
 
 const posts = await getCollection('posts');
@@ -22,6 +23,8 @@ function getExcerpt(body: string): string {
     image={`${base}/images/andrea-profile.jpg`}
     bio="I'm a California girl at heart who spent almost two years living in beautiful southern Spain with my husband. These days, we are settling into life in the Boston area—exploring charming New England towns, soaking up the seasons, and finding joy in the everyday. I love sharing our travel adventures, cozy corners of home, and the little moments that make life feel full and beautiful. I'm so glad you're here!"
   />
+
+  <NewsletterSignup buttondownUsername="YOUR_USERNAME" />
 
   <section class="posts-list">
     {sortedPosts.map((post) => {
