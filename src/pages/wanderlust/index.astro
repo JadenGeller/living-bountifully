@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Wanderlust | Living Bountifully">
+  <section class="page-intro">
+    <h1>From the Blog</h1>
+    <p>
+      Welcome to Wanderlust—a collection of my travel stories, guides, and adventures near and far.
+      From weekend getaways to international escapes, this is where I share all the places that have
+      sparked curiosity, brought joy, and left me wanting more. Whether you're planning your next trip
+      or just here to wander from your screen, I'm so glad you're along for the ride.
+    </p>
+  </section>
+
+  <section class="posts-grid">
+    {sortedPosts.map((post) => (
+      <PostCard
+        title={post.data.title}
+        date={post.data.date}
+        category={post.data.category}
+        slug={post.id}
+        image={post.data.image}
+        description={post.data.description}
+      />
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .page-intro {
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  .page-intro p {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    .page-intro {
+      padding: 2.5rem 1rem;
+    }
+
+    .page-intro h1 {
+      font-size: 2rem;
+    }
+
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
